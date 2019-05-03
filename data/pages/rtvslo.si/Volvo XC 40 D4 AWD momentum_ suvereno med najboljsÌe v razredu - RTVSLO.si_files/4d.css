@@ -1,0 +1,749 @@
+.jw-cue {
+    width: 1px!important;
+}
+
+.jw-skip {
+    bottom: 4em!important;
+}
+
+.jw-tab-focus:focus {
+    outline: none;
+}
+
+.jw-state-idle .jw-controls .jw-display-controls .jw-icon-display {
+    background-image: url('//img.rtvslo.si/_static/r1/rtv4d/app/img/playButton.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.jw-state-idle .jw-icon-playback:before{
+    content: ''!important;
+    background-image: url('//img.rtvslo.si/_static/r1/rtv4d/app/img/playButton.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-top: 9px;
+}
+
+.jw-state-idle:hover .jw-icon-playback:before,
+.jw-state-paused:hover .jw-icon-playback:before{
+  
+    background-image: url('//img.rtvslo.si/_static/r1/rtv4d/app/img/playButtonActive.png');
+    
+}
+
+.jw-state-idle:hover .jw-controls .jw-display-controls .jw-icon-display {
+    background-image: url('//img.rtvslo.si/_static/r1/rtv4d/app/img/playButtonActive.png');
+}
+
+.jwplayer.jw-state-idle .jw-icon-display:before {
+    content: ''!important;
+}
+*/
+.jw-display-icon-container.jw-background-color {
+    background: transparent!important;
+    opacity: 0.8;
+}
+
+.jw-background-color { 
+    
+}
+
+.jw-display-icon-container.jw-display-icon-display.jw-background-color,
+.jw-dock-button.jw-background-color,
+.jw-display-icon-rewind.jw-background-color{
+    background: transparent!important;
+}
+
+.jw-controlbar.jw-background-color
+ {  
+    background:  linear-gradient(to top, #333, transparent)!important;
+}
+
+
+.jw-state-playing .jw-logo {
+    display: none;
+}
+
+.jw-time-tip {
+    bottom: 1em;
+    font-size: 0.9em;
+}
+
+
+.jw-slider-vertical .jw-progress {
+    background: #ff0046;
+    background: -webkit-linear-gradient(top, #008fff, purple, #fb3626, #ffb900)!important;
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top, #008fff, purple, #fb3626, #ffb900)!important;
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top, #008fff, purple, #fb3626, #ffb900)!important;
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top, #008fff, purple, #fb3626, #ffb900)!important;
+    /* Standard syntax (must be last) */
+}
+
+.jw-progress {
+    background: #ff0046;
+    background: -webkit-linear-gradient(right, #008fff, purple, #fb3626, #ffb900)!important;
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #008fff, purple, #fb3626, #ffb900)!important;
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #008fff, purple, #fb3626, #ffb900)!important;
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #008fff, purple, #fb3626, #ffb900)!important;
+    /* Standard syntax (must be last) */
+}
+
+
+.jw-button-color {
+    font-size: 1.2em!important;
+}
+.jw-icon-hd:before {
+    content: " "!important;
+   
+}
+.jw-icon-hd.jw-icon {
+    background: url("//img.rtvslo.si/_static/r666/rtv4d/img/settingsButton.png");
+    background-size: 38px;
+    background-repeat: no-repeat;
+    margin-top: 8px;
+}
+.jw-flag-small-player .jw-icon-hd.jw-icon {
+    margin-top: 0px;
+}
+
+
+.jw-icon.jw-icon-tooltip.jw-icon-cc.jw-reset.jw-toggle.jw-off:before {
+    
+    color:#555!important;
+}
+
+.jwplayer .jw-preview,
+.jw-error .jw-preview,
+.jw-stretch-uniform .jw-preview {
+    background-size: cover!important;
+}
+
+.jw-text.jw-reset.jw-text-alt{
+    line-height: 3.2em;
+}
+
+.jw-display-icon-container .jw-icon .jw-svg-icon{
+    display: none;
+}
+
+.icon.ccSize .jw-icon{
+    width: 18px;
+}
+
+.jw-text-live{
+    font-weight: normal!important;
+    font-size: 14px!important;
+}
+
+.jw-text-live::before{
+    color:red;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar4dplayer {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar4dplayer.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+   However, delay the fade out process for 2.5 seconds */
+   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+   animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+#rtv4d_popup ::-webkit-scrollbar {
+    width: 8px;
+    background-color: #333;
+}
+
+#rtv4d_popup .logo{
+    width: 75px;
+    height: 40px;
+    background-image: url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_mmc.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 75px;
+    display: inline-block;
+    margin: 6px 0 5px 13px;
+}
+
+ #rtv4d_popup .showName{
+    position: absolute;
+    top: 3px;
+    left: 100px;
+    color: #ccc;
+    font-size: 1rem;
+    padding-left: 10px;
+    font-weight: 500;
+  
+}
+
+#rtv4d_popup .showDate{
+    position: absolute;
+    top: 25px;
+    left: 100px;
+    color: #ccc;
+    font-size:0.9rem;
+    font-weight: 100;
+    padding-left: 10px;
+}
+
+#rtv4d_popup .close{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAYAAAA5ZDbSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALlSURBVHhe7dw7bhsxEIBhxUdIkTQ5QGp36ewy5zYgCXrAgoFUySHSuEiRbLgIB6CDfXBf5Az5f8BA9ooFwR/QCltoBwAAAAAAAAAAAGyvaZp3/k8soPIcr9frl/P5vL/dbh/8Jcyw3+/fu3N8cvPgL+XXxr1cLj/dNG5j34g8j4979ef4qiJyGFeGyNOFcYNzbCM/+iXptfcKt4F9uKlgc0SO1BU3OMcXd853fml6bcQ2Zs/miDxiJO6P4/H4yS/Nh8jzmIgriDyNqbiCyHFMxhVEHmY6riBytyLiCiK/VVRcQeR/iowrao9cdFxRa+Qq4oraIlcVV9QSucq4ovTIVccVpUYmbqC0yMTtUEpk4g6wHpm4EaxGJu4E1iITdwYrkYm7gPbIxF2B1sgjcb8TdwJtkYm7AS2Ribuh3JGJm0CuyMRNKHVk4maQKjJxM9o6MnEV2CoycRVZOzJxFVorMnEVWxqZuAbMjUxcQ6ZGJq5BsZGJa9hYZPf6mbjGjUT+3XOduJYMRf5/iGtUTGTiGucitvfcvo/lP27u/VJYM/RtWca9H/3EC4rExJUhsjFT4soQ2Yixhxhu7tuYPe8TWbPYJ1RD366JrFRsXEFkQ6bGFUQ2YG5cQWTFlsYVRFZorbiCyIqsHVcQWYGt4goiZ7R1XEHkDFLFFUROKHVcQeQEcsUVRN5Q7riCyBvQEleMRT4cDh/9UozRFlcQeQVa4woiL6A9riDyDFbiijYikSONxFX784BEjmA1riDyAOtxBZE7lBJXEDlQWlxBZKfUuKLqyKXHFVVGriWuqCpybXFFFZFrjSuKjlx7XFFkZOK+VVRk4nYrIjJxh5mOTNw4JiMTdxpTkYk7j4nIxF1GfWS3iaeezRE30lBkN89N09z5pem5jT24eQ03RdzpuiK7/3+dTqevfkk+YWTizhdGVhNXuA09unkh7jJtZBf4WVVckfVeURDOEQAAAAAAAAAAAMAqdru/bi+cNWdojyUAAAAASUVORK5CYII=');
+    
+}
+
+#rtv4d_popup .content .titleLink{
+    color:white;
+    font-size:1.25rem;
+    display: inline-block;
+    font-weight:100;
+    line-height: 1.5rem;
+    padding-right: 25px;
+    padding-bottom: 7px;
+}
+
+#rtv4d_popup .column,
+#rtv4d_popup .columns {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+/* For devices larger than 550px */
+@media (min-width: 750px) {
+
+    #rtv4d_popup .column,
+    #rtv4d_popup .columns {
+        margin-left: 1.3%;
+    }
+
+    #rtv4d_popup .column:first-child,
+    #rtv4d_popup .columns:first-child {
+        margin-left: 0;
+    }
+
+    #rtv4d_popup .one.column,
+    #rtv4d_popup .one.columns {
+        width: 4.66666666667%;
+    }
+
+    #rtv4d_popup .two.columns {
+        width: 13.3333333333%;
+    }
+
+    #rtv4d_popup .three.columns {
+        width: 22%;
+    }
+
+    #rtv4d_popup .four.columns {
+        width: 30.6666666667%;
+    }
+
+    #rtv4d_popup .five.columns {
+        width: 39.3333333333%;
+    }
+
+    #rtv4d_popup .six.columns {
+        width: 48%;
+    }
+
+    #rtv4d_popup .seven.columns {
+        width: 56.6666666667%;
+    }
+
+    #rtv4d_popup .eight.columns {
+        width: 65.3333333333%;
+    }
+
+    #rtv4d_popup .nine.columns {
+        width: 74.0%;
+    }
+
+    #rtv4d_popup .ten.columns {
+        width: 82.6666666667%;
+    }
+
+    #rtv4d_popup .eleven.columns {
+        width: 91.3333333333%;
+    }
+
+    #rtv4d_popup .twelve.columns {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #rtv4d_popup .one-third.column {
+        width: 30.6666666667%;
+    }
+
+    #rtv4d_popup .two-thirds.column {
+        width: 65.3333333333%;
+    }
+
+    #rtv4d_popup .one-half.column {
+        width: 48%;
+    }
+}
+
+#rtv4d_popup .live .two.columns{
+    display: none;
+}
+
+#rtv4d_popup .live .dd-container{
+    position: absolute;
+    right: 100px;
+    top:-50px;      
+}
+
+#rtv4d_popup .live .showName{
+        display: none;
+}
+
+#rtv4d_popup .live .showDate{
+    display: none;
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+    #rtv4d_popup .live .dd-container{
+        position: absolute;
+        right: 0px;    
+    }
+
+    #rtv4d_popup .live .showName{
+        display: block;
+    }
+
+    #rtv4d_popup .live  .showDate{
+        display: block;
+    }
+
+    #rtv4d_popup .live .two.columns{
+        display: block;
+    }
+
+    #rtv4d_popup ul.video-list-4d {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        overflow-y: auto;
+        /* position: fixed; */
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+    }
+
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+    #rtv4d_popup .content .titleLink{
+        padding-right: 0px;
+    }
+
+     #rtv4d_popup ul.video-list-4d {
+        
+        height: 82%;
+    }
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+
+/* ==========  Select Field Variables ========== */
+/* ==========  Select Field ========== */
+/* Style Select Field */
+#rtv4d_popup select#mmc-player-select {
+    font-family: inherit;
+    background-color: transparent;
+    width: 100%;
+    padding: 4px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #eee;
+    border: none;
+    border-bottom: 1px solid hsl(206.1, 79.3%, 52.7%);
+
+}
+
+#rtv4d_popup select#mmc-player-select option {
+     background-color: #333;
+}
+
+/* Remove focus */
+#rtv4d_popup select#mmc-player-select:focus {
+    outline: none;
+}
+
+/* Use custom arrow */
+#rtv4d_popup .mdl-selectfield select#mmc-player-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#rtv4d_popup .mdl-selectfield {
+    position: relative;
+}
+
+#rtv4d_popup .mdl-selectfield:after {
+    position: absolute;
+    top: 0.75em;
+    right: 0.5em;
+    /* Styling the down arrow */
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: .25em solid transparent;
+    border-right: .25em solid transparent;
+    border-top: 0.375em solid #ccc;
+    pointer-events: none;
+}
+
+#rtv4d_popup ul.video-list-4d {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;       
+    position: absolute;
+    overflow-y: auto;
+}
+
+#rtv4d_popup ul.video-list-4d.live {
+   margin-top: 5px;
+}
+
+#rtv4d_popup .video-list-4d li {
+    padding: 5px;
+    display: inline-block;
+    max-width: 200px;
+    margin-bottom: 10px;
+    background-color: #222;
+    position: relative;
+
+}
+
+#rtv4d_popup .video-list-4d.live li {
+    margin-bottom: 2px;
+    font-size: 0.875rem;
+    line-height: 1.15rem;
+    padding: 2px 5px;
+  
+    margin-bottom: 2px;
+    
+    font-size: 0.875rem;
+}
+
+#rtv4d_popup .video-list-4d li .title {
+    font-size: 0.9rem;
+    overflow-wrap: break-word;
+    max-width: 200px;
+    white-space: pre-wrap;
+    color:#ddd;
+
+}
+
+#rtv4d_popup .video-list-4d li .length{
+    position: absolute;
+    top: 9px;
+    right: 8px;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1px 3px;
+    font-size: 0.8rem;
+
+}
+
+#rtv4d_popup .video-list-4d li:hover {    
+    cursor: pointer;
+}
+
+#rtv4d_popup .d4-button-group {
+    margin-top: 8px;
+    /* text-align: center; */
+    display: inline-block;
+    background-repeat: no-repeat;
+    padding-top: 0px;
+    font-size: 0.9rem;
+    /* background-position-x: 17px; */
+    color: #bbb;
+    width: 28%;
+    height: 30px;
+    line-height: 1.2rem;
+    padding-left: 22px;
+    background-size: 17px;
+    padding-top: 2px;         
+    font-weight: 500;
+    letter-spacing: .007px;
+    text-transform: uppercase;
+    background-position-y: 2px;                    
+}
+
+#rtv4d_popup #show_description_txt{
+    font-size:0.9rem;line-height:1.1rem;color:#bbb;padding-bottom:10px;
+}
+
+#rtv4d_popup .external_link{
+    display:block;color:#2793E6;font-size:0.9rem;padding:0 0 5px;
+}
+
+#rtv4d_popup  .mega-menu {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    height: 70px;
+    flex-direction: row;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+#rtv4d_popup .mega-menu li.mega-menu-column {
+    padding: 4px 12px 10px 12px;
+}
+
+
+#rtv4d_popup  ul.mega-menu {
+   
+    list-style: none;
+    padding:0;
+}
+#rtv4d_popup  .mega-menu li {
+   
+    float: left;
+}
+
+  #rtv4d_popup  .content{
+    padding: 10px 0px 10px 10px;
+    position: relative;
+    text-align: left;
+  }
+
+.mega-menu li.mega-menu-column a {
+    display: block;
+    height: 49px;
+    width: 40px;
+    background-size: 40px 49px;
+}
+
+.mega-menu li.mega-menu-column a.tvs1{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_tvslo1.png');
+}
+.mega-menu li.mega-menu-column a.tvs2{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_tvslo2.png');
+}
+.mega-menu li.mega-menu-column a.tvs3{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_tvslo3.png');
+}
+.mega-menu li.mega-menu-column a.tvkp{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_tvkp.png');
+}
+.mega-menu li.mega-menu-column a.tvmb{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_tvmb.png');
+}
+.mega-menu li.mega-menu-column a.tvmmc{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_tvmmc.png');
+}
+.mega-menu li.mega-menu-column a.sport202{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/202sport_small.png');
+    background-size:40px 40px;
+    background-repeat: no-repeat;
+    margin-top: 9px;
+    margin-bottom: -9px;
+}
+.mega-menu li.mega-menu-column a.ra1{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_raslo1_70x70_1.png');
+    background-size:40px 40px;
+    background-repeat: no-repeat;
+    margin-top: 9px;
+    margin-bottom: -9px;
+}
+.mega-menu li.mega-menu-column a.val202{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_raval202_70x70_1.png');
+    background-size:40px 40px;
+    background-repeat: no-repeat;
+    margin-top: 9px;
+        margin-bottom: -9px;
+}
+.mega-menu li.mega-menu-column a.ars{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_raars_70x70_1.png');
+    background-size:40px 40px;
+    background-repeat: no-repeat;
+    margin-top: 9px;
+    margin-bottom: -9px;
+}
+.mega-menu li.mega-menu-column a.rakp{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_rakp_70x70_1.png');
+    background-size:40px 40px;
+    background-repeat: no-repeat;
+    margin-top: 9px;
+    margin-bottom: -9px;
+}
+.mega-menu li.mega-menu-column a.rasi{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_rasi_70x70_1.png');
+    background-size:40px 40px;
+    background-repeat: no-repeat;
+    margin-top: 9px;
+    margin-bottom: -9px;
+}
+.mega-menu li.mega-menu-column a.ramb{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_ramb_70x70_1.png');
+background-size:40px 40px;
+    background-repeat: no-repeat;
+    margin-top: 9px;
+    margin-bottom: -9px;
+}
+.mega-menu li.mega-menu-column a.capo{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_racp_70x70_1.png');
+    background-size:40px 40px;
+    background-repeat: no-repeat;
+    margin-top: 9px;
+    margin-bottom: -9px;
+}
+.mega-menu li.mega-menu-column a.rammr{
+    background-image:url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/logo_rammr_70x70_1.png');
+    background-size:40px 40px;
+    background-repeat: no-repeat;
+    margin-top: 9px;
+    margin-bottom: -9px;
+}
+
+#rtv4d_popup .dd-option-image, #rtv4d_popup .dd-selected-image {
+   
+    max-width: 30px;
+}
+
+ #rtv4d_popup  .dd-select{
+     background: transparent!important;
+     border: none;
+   
+    color: #bbb;
+    text-align: left;
+    padding-top: 3px;
+ }
+
+ #rtv4d_popup  .dd-selected-text{
+     line-height: 1.2rem!important;
+     font-weight: normal;
+     padding: 7px;
+ }
+
+ #rtv4d_popup .dd-pointer-down {
+    border: solid 5px transparent;
+    border-top: solid 5px #bbb;
+}
+
+#rtv4d_popup  .dd-selected {
+ 
+    padding: 5px;
+    
+}
+
+
+
+.dd-options .dd-option-text{
+ 
+    line-height: 1.5rem!important;
+    font-size: 0.875rem;
+    padding-top: 6px;
+    color: #777;
+
+}
+
+@media (max-width: 750px) {
+    #rtv4d_popup ul.video-list-4d {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    #rtv4d_popup ul.video-list-4d li {
+        display: inline-block;
+        padding-right: 7px;
+        /* float: left; */
+        vertical-align: top;
+        height: 155px;
+        margin-right: 10px;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    #rtv4d_popup .mmc-player-content .content{
+        background-color: #111;
+    }
+}
+
+
+#related-news-popup a.zkpWidget {
+    display: block;
+    background-image: url('https://img.rtvslo.si/_static/r1/rtv4d/app/img/ico-kosarica.png');
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    
+    -moz-box-shadow: inset 0px 1px 0px 0px #df487d;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #df487d;
+    box-shadow: inset 0px 1px 0px 0px #df487d;
+    background-color: #832849;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #5d1834;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 2px 12px 2px 26px;
+    text-decoration: none;
+    text-shadow: none;
+    float: right;
+    margin: 0 10px 10px 0;
+}

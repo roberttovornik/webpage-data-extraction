@@ -1,0 +1,159 @@
+(function () {
+    var config = {
+        insertionId: Number(8053600),
+        pageId: "680240",
+        sessionId: Math.round(Math.random()*100000),
+        baseUrl: String("https://www3.smartadserver.com"),
+        formatId: Number(36888),
+        tagId: String("sas_36888"),
+        isAsync: window.sas_ajax || true,
+        creative: {
+            idd: Number(22104530),
+            url: String(""),
+            width: Number(728),
+            height: Number(90),
+            clickUrl: String("https://www3.smartadserver.com/click?imgid=22104530&insid=8053600&pgid=680240&ckid=4561282283840661015&uii=311694661694817949&acd=1554298036201&pubid=23&tmstp=7998614796&tgt=%24dt%3d1t%3b%24hc&systgt=%24qc%3d1307099992%3b%24ql%3dHigh%3b%24qpc%3d1000%3b%24qt%3d68_3409_84247t%3b%24dma%3d0%3b%24b%3d16730%3b%24o%3d12100%3b%24sw%3d1920%3b%24sh%3d1200&pgDomain=https%3a%2f%2fwww.rtvslo.si%2fzabava%2favtomobilnost%2ftesti%2faudi-a6-50-tdi-quattro-nemir-v-premijskem-razredu%2f475392&go="),
+            clickUrlArray: ["https://www3.smartadserver.com/click?imgid=22104530&insid=8053600&pgid=680240&ckid=4561282283840661015&uii=311694661694817949&acd=1554298036201&pubid=23&tmstp=7998614796&tgt=%24dt%3d1t%3b%24hc&systgt=%24qc%3d1307099992%3b%24ql%3dHigh%3b%24qpc%3d1000%3b%24qt%3d68_3409_84247t%3b%24dma%3d0%3b%24b%3d16730%3b%24o%3d12100%3b%24sw%3d1920%3b%24sh%3d1200&pgDomain=https%3a%2f%2fwww.rtvslo.si%2fzabava%2favtomobilnost%2ftesti%2faudi-a6-50-tdi-quattro-nemir-v-premijskem-razredu%2f475392&go="],
+            oryginalClickUrl: String(""),
+            clickTarget: String("_blank"),
+            type: Number(0),
+            agencyCode: String('<scr'+'ipt type="text/javascript">\r\n'+'    google_ad_client = "ca-pub-9915765277741622";\r\n'+'    google_ad_slot = "4033123108";\r\n'+'    google_ad_width = 728;\r\n'+'    google_ad_height = 90;\r\n'+'    google_language=\'sl\';\r\n'+'</scr'+'ipt>\r\n'+'<!-- 728x90 ALL -->\r\n'+'<scr'+'ipt type="text/javascript"\r\n'+'src="//pagead2.googlesyndication.com/pagead/show_ads.js">\r\n'+'</scr'+'ipt>'),
+            creativeClickCountPixelUrl: String("https://www3.smartadserver.com/h/cp?imgid=22104530&insid=8053600&pgid=680240&ckid=4561282283840661015&uii=311694661694817949&acd=1554298036201&pubid=23&tmstp=7998614796&tgt=%24dt%3d1t%3b%24hc&systgt=%24qc%3d1307099992%3b%24ql%3dHigh%3b%24qpc%3d1000%3b%24qt%3d68_3409_84247t%3b%24dma%3d0%3b%24b%3d16730%3b%24o%3d12100%3b%24sw%3d1920%3b%24sh%3d1200&pgDomain=https%3a%2f%2fwww.rtvslo.si%2fzabava%2favtomobilnost%2ftesti%2faudi-a6-50-tdi-quattro-nemir-v-premijskem-razredu%2f475392"),
+            creativeCountPixelUrl: String("https://www3.smartadserver.com/h/aip?tmstp=7998614796&ckid=4561282283840661015&pubid=23&systgt=%24qc%3d1307099992%3b%24ql%3dHigh%3b%24qpc%3d1000%3b%24qt%3d68_3409_84247t%3b%24dma%3d0%3b%24b%3d16730%3b%24o%3d12100%3b%24sw%3d1920%3b%24sh%3d1200&uii=311694661694817949&acd=1554298036201&visit=M&statid=2&tgt=%24dt%3d1t%3b%24hc&pgDomain=https%3a%2f%2fwww.rtvslo.si%2fzabava%2favtomobilnost%2ftesti%2faudi-a6-50-tdi-quattro-nemir-v-premijskem-razredu%2f475392&capp=0&mcrdbt=0&insid=8053600&siteid=112577&imgid=22104530&pgid=680240&fmtid=36888&sig=cckOBYl93tGG5fcmmO8LCDvVJ9YtvqdN7A%2fZBj6GzUk%3d"),
+            flashVars: '',
+            wMode: String("Opaque"),
+            backup: {
+                url: String(""),
+                clickUrl: String(""),
+                clickTarget: String(""),
+                width: Number(),
+                height: Number()
+            }
+        }
+    };
+
+    if('0'=='0'){
+        var scr = '';
+    }else{
+        var scr = ('' + '<scr'+'ipt type="text/javascript">\r\n'+'    google_ad_client = "ca-pub-9915765277741622";\r\n'+'    google_ad_slot = "4033123108";\r\n'+'    google_ad_width = 728;\r\n'+'    google_ad_height = 90;\r\n'+'    google_language=\'sl\';\r\n'+'</scr'+'ipt>\r\n'+'<!-- 728x90 ALL -->\r\n'+'<scr'+'ipt type="text/javascript"\r\n'+'src="//pagead2.googlesyndication.com/pagead/show_ads.js">\r\n'+'</scr'+'ipt>');
+    }
+
+    appendToContainer = function(id,elem){
+        var tagId=document.getElementById(id);
+        if("string"==typeof elem){
+            var div =document.createElement("div");
+            div.innerHTML=elem;
+            elem = div;
+        }
+        tagId.appendChild(elem);
+    };
+
+    if(!document.getElementById("sas_36888")) document.write('<div id="sas_36888"></div>');
+
+    if(config.isAsync) {
+        if (scr.replace(/\r\n/gm, '')) {
+            var ifr = document.createElement('iframe');
+            ifr.src = 'about:blank';
+            var css = 'position:absolute;left:-5000px;width:1px;height:1px';
+            ifr.setAttribute('style', css);
+            ifr.style.cssText = css;
+            appendToContainer('sas_36888', ifr);
+            var d = ifr.contentWindow.document;
+            d.open('text/html', 'replace');
+            d.write('<!DOCTYPE html><head></head><body>' + scr + '</body></html>');
+            d.close();
+        }
+    } else document.write(scr);
+
+    //js file part
+    var sas = sas || {};
+    if(!sas.standAlonePassback)
+    sas.standAlonePassback = function(config){
+        var self = this;
+        self.d = document;
+        self.w = window;
+        self.c = config;
+        self.logOn = false;
+
+        self.addElement = function (type, parent, attr){
+            self.log("addElement", type, parent, attr);
+
+            var el = self.d.createElement(type);
+            for (var i in attr)
+            el.setAttribute(i, attr[i]);
+            parent.appendChild(el);
+            return el;
+        };
+
+        self.log = function(){
+            if(self.logOn) console.log(arguments);
+        };
+
+        self.addCss = function (){
+            self.log("addCss");
+
+            var css = self.d.createElement('style');
+            css.type = 'text/css';
+
+            var style = [
+                '#'+self.c.tagId+'{margin:0;padding:0;display:block;}',
+                '#sas_iframe_'+self.c.insertionId+'{width:'+self.c.creative.width+'px;height:'+self.c.creative.height+'px;margin:0 auto;padding:0;display:block;}',
+            ].join('\r\n');
+
+            if (css.styleSheet) {
+                css.styleSheet.cssText = style;
+            } else {
+                css.appendChild(self.d.createTextNode(style));
+            }
+            self.d.getElementsByTagName('head')[0].appendChild(css);
+        };
+
+        self.addCreative = function(creative, parent){
+            self.log("addCreative", creative, parent);
+
+            if(0 != self.c.creative.type) return;
+
+            if(self.c.isAsync){
+                var ifr = self.addElement('iframe', parent, {id: 'sas_iframe_'+self.c.insertionId, src: 'about:blank', width: self.c.creative.width+'px', height: self.c.creative.height+'px', frameBorder: '0', 'scrolling': 'no', marginheight: '0', marginwidth: '0'});
+                var d = ifr.contentWindow.document;
+                d.open('text/html', 'replace');
+                d.write('<!DOCTYPE html><head></head><body style="padding:0;margin:0 auto">' + self.c.creative.agencyCode + '</body></html>');
+                d.close();
+            } else self.d.write(self.c.creative.agencyCode);
+        };
+
+        self.init = function(){
+            self.log("init");
+
+            //iframe out, ifriendly
+            if (typeof(inDapIF) != 'undefined' && inDapIF) {
+                //set async mode
+                self.c.isAsync = true;
+
+                self.d = window.parent.document;
+                self.w = window.parent;
+            }
+
+            //place for ad
+            self.adPlacement = self.d.getElementById(self.c.tagId);
+
+            //fix for the friendly iframe
+            if(!self.adPlacement && typeof(inDapIF) != 'undefined' && inDapIF) {
+                var iframe = window.frameElement;
+                self.adPlacement = self.d.createElement('DIV');
+                self.adPlacement.setAttribute('id', self.c.tagId);
+                iframe.parentNode.insertBefore(self.adPlacement, iframe); 
+            }
+
+            //load css
+            self.addCss();
+
+            //add creative
+            self.addCreative(self.c.creative, self.adPlacement);
+        };
+    };
+    //js file part
+
+    newObj8053600 = new sas.standAlonePassback(config);
+    newObj8053600.init();
+})();

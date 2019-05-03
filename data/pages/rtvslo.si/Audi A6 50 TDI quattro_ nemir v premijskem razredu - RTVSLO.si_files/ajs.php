@@ -1,0 +1,20 @@
+﻿(function(){
+var s = "<"+"div id=\'beacon_5ca4b451d800314645a908ddc087b809\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'>\n";
+s += "<"+"img width=\"0\" height=\"0\" src=\"https://cat.nl.eu.criteo.com/delivery/lg.php?cppv=2&cpp=p_xP6HxqV0VFWk9lR0Y4dU0xSkJoMU9TYTRpcHkrUTNleS9RQUU5U0MvYThaQzlBVW5md1FrZXFidGpLYmhSUDZFalR4RHZHS1QyM3lNOGVOTVdzM21mdnhibFBYYVY0ZjQyenRPaEJjcmlCemtPelVZK2hlbmt0Qi9CbFJRbnplZjBQYkowWGU4Qk1iaThIajVNMGgrME9kQlZ5TmZ1ckJCVnFWSzlJNGE5YkFpb2lVSHNwWWd4U1loMGkxUDZsUGcrZW15WStFUHliUnFwSTVGc1JmT1dick1IV1RDV2ZNbWZzN1hXRXBXcjVqbHlqRzlyRTEzRlNXMjl2YlFBY0x2Vkx1fA\"/>\n";
+s += "<"+"/div>\n";
+s += "<"+"script type=\"application/javascript\" src=\"//ced.sascdn.com/tag/1644/smart.js\" async><"+"/script>\n";
+s += "<"+"div id=\"sas_36888\"><"+"/div>\n";
+s += "<"+"script type=\"application/javascript\">\n";
+s += "    var sas = sas || {};\n";
+s += "    sas.cmd = sas.cmd || [];\n";
+s += "    sas.cmd.push(\n";
+s += "        function () {\n";
+s += "            sas.call(\n";
+s += "                { siteId: 112577, pageId: 680240, formatId: 36888, tagId: \"sas_36888\" },\n";
+s += "                { networkId: 1644, domain: \"//www3.smartadserver.com\" /*, onNoad: function() {} */ }\n";
+s += "            );\n";
+s += "        }\n";
+s += "    );\n";
+s += "<"+"/script>\n";
+s += "\n";
+document.write(s);})();
