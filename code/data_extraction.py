@@ -49,8 +49,6 @@ def extract_data_overstock(document : str, method='xpath'):
             listings[i]['SavingPercent'] = saving[1][1:-1]
             #listings[i]['Content'] = listing_trees[i].xpath('./td[2]/table/tbody/tr/td[2]/span/text()')[0]
             listings[i]['Content'] = listing_trees[i].xpath('./td[2]/table/tbody/tr/td[2]')[0].text_content()
-            print(listings[i])
-            break
     
     data = json.dumps(listings)
     return data
@@ -83,10 +81,9 @@ for domain in PAGES_DIRS:
     html_list = load_htmls(domain) 
     for html_name,html_raw in html_list.items():
         if 'overstock' in domain.name.lower():
-            extract_data_overstock(html_raw)
-            #print(extract_data_overstock(html_raw))
-        #elif 'rtvslo' in domain.name.lower():
-        #    print(extract_data_rtvslo(html_raw))
+            print(extract_data_overstock(html_raw))
+        elif 'rtvslo' in domain.name.lower():
+            print(extract_data_rtvslo(html_raw))
                 
 
 
