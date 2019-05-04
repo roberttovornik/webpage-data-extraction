@@ -20,7 +20,7 @@ def load_htmls(html_dir : Path):
                 files[filename] = file.read()            
     return files
 
-def extract_data_overstock(document : str, method='xpath'):
+def extract_data_overstock(document : str, method='regex'):
     listing_template={'Title' : None,
           'Content' : None,
           'ListPrice' : None,
@@ -53,7 +53,7 @@ def extract_data_overstock(document : str, method='xpath'):
     data = json.dumps(listings)
     return data
 
-def extract_data_rtvslo(document : str, method='xpath'):
+def extract_data_rtvslo(document : str, method='regex'):
     article={"Author" : None,
              "PublishedTime" : None,
              "Title" : None,
@@ -62,7 +62,22 @@ def extract_data_rtvslo(document : str, method='xpath'):
              "Content" : None}
     #Extract required data (using chosen method) and fill-out article dictionary
     if method.lower() == 'regex':
-        pass
+        regex_title_subtitle = '<h1>(.*)</h1>\s+<div class=\"subtitle\">(.*)<\/div>'
+        match_title_subtitle = re.compile(regex_title_subtitle).search(document)
+        article["Title"] = match_title_subtitle.group(1)
+        article["SubTitle"] = match_title_subtitle.group(2)
+        regex_author_publishedTime = '<div class=\"author-timestamp\">\s+<strong>(.*)<\/strong>\|\s+([^\t]*)\s+<\/div>'
+        match_author_publishedTime = re.compile(regex_author_publishedTime).search(document)
+        article['Author'] = match_author_publishedTime.group(1)
+        article['PublishedTime'] = match_author_publishedTime.group(2)
+        regex_lead = '<p class=\"lead\">(.*)<\/p>'
+        match_lead = re.compile(regex_lead).search(document)
+        article['Lead'] = match_lead.group(1)
+        #regex_content = '<article class=\"article\">\s+<figure class=\"c-figure-right\">.*<\/figure>\s+<p class=\"Body\">(.*)<\/p><\/article>'
+        #match_content = re.compile(regex_content).search(document)
+        #article['Content'] = match_content.group(1)
+        #print(article['Content'])
+        
     elif method.lower() == 'xpath':
         tree = html.fromstring(document)
         article["Title"] = tree.xpath('//div[@id="main-container"]/div[3]/div/header/h1')[0].text_content()
