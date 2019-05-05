@@ -108,7 +108,51 @@ def extract_data_bolha(document : str, method='xpath'):
              "Description" : None
             }
     if method.lower() == 'regex':
-        pass
+        regex_title = '<div class=\"ad\">\s+<h1>(.*)</h1>'
+        match_title = re.compile(regex_title).search(document)
+        article['Title'] = match_title.group(1)
+        regex_category = '\">([\w\-\s]*)<\/a>\s+<\/nav>'
+        match_category = re.compile(regex_category).search(document)
+        article['Category'] = match_category.group(1)
+        regex_price = '<div class=\"price\">Cena: <span>(.*)<\/span><\/div>'
+        match_price = re.compile(regex_price).search(document)
+        article['Price'] = match_price.group(1)
+        regex_id = '<p><label>.*ifra oglasa:<\/label>(.*)<\/p>'
+        match_id = re.compile(regex_id).search(document)
+        article['ID'] = match_id.group(1)
+        regex_timeAdded = '<p><label>Vpisano:<\/label>(.*)<\/p>'
+        match_timeAdded = re.compile(regex_timeAdded).search(document)
+        article['TimeAdded'] = match_timeAdded.group(1)
+        regex_timeChange = '<p><label>Spremenjeno:<\/label>(.*)<\/p>'
+        match_timeChange = re.compile(regex_timeChange).search(document)
+        article['TimeChange'] = match_timeChange.group(1)
+        regex_country_remainingTime = '<p><label>Objavljeno v:<\/label>.*class=\"worldFlags\">(.*)<\/span><\/p>\s+<p class=\"validTo\">Oglas pote.*e .*ez (.*) <\/p>'
+        match_country_remainingTime = re.compile(regex_country_remainingTime).search(document)
+        article['Country'] = match_country_remainingTime.group(1)
+        article['RemainingTime'] = match_country_remainingTime.group(2)
+        regex_username = '<p><label>Uporabnik:<\/label><strong>(.*)<\/strong><\/p>'
+        match_username = re.compile(regex_username).search(document)
+        article['Username'] = match_username.group(1)
+        regex_userAddress = '<p><label>Naslov:<\/label><strong>(.*)<br><\/strong><\/p>'
+        match_userAddress = re.compile(regex_userAddress).search(document)
+        article['UserAddress'] = match_userAddress.group(1)
+        
+        regex_userPhone = '<p><label>Telefon:<\/label><strong>(.*)<\/strong><\/p>'
+        match_userPhone = re.compile(regex_userPhone).search(document)
+        if match_userPhone is not None:    
+            article['UserPhone'] = match_userPhone.group(1)
+        regex_userMobile = '<p><label>Mobilna .*tevilka:<\/label><strong>(.*)<\/strong><\/p>'
+        match_userMobile = re.compile(regex_userMobile).search(document)
+        if match_userMobile is not None:
+            article['UserMobile'] = match_userMobile.group(1)
+        regex_userSinceTime = '<i>Uporabnik .*e od (.*)<\/i>'
+        match_userSinceTime = re.compile(regex_userSinceTime).search(document)
+        article['UserSinceTime'] = match_userSinceTime.group(1)
+        regex_description = '<div class=\"content\">\s+<p>(.*)<\/p>\s+<\/div>'
+        match_description = re.compile(regex_description).search(document)
+        if match_description is not None:
+            article['Description'] = match_description.group(1)
+        #print(article['Description'])
     elif method.lower() == 'xpath':
         tree = html.fromstring(document)
         article['Title'] = tree.xpath('//*[@id="adDetail"]/div[2]/h1')[0].text_content()
@@ -147,7 +191,7 @@ for domain in PAGES_DIRS:
         elif 'rtvslo' in domain.name.lower():
             print(extract_data_rtvslo(html_raw, method='regex'))
         elif 'bolha' in domain.name.lower():
-            print(extract_data_bolha(html_raw, method='xpath'))
+            print(extract_data_bolha(html_raw, method='regex'))
                 
 
 
