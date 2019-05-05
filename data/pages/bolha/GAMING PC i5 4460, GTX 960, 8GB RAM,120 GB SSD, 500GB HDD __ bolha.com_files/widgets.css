@@ -1,0 +1,262 @@
+/* widget mostPopular
+----------------------------------------------------*/
+
+section.coloumnView .frame {
+	position: relative;
+	display: block;
+	width: 216px;
+	height: 290px;
+	overflow: hidden;
+}
+
+	section.coloumnView .slider {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 290px;
+	}
+	
+	section.coloumnView .slider img[alt]{
+		color: #fff;
+	}
+	
+	section.coloumnView .slide {
+		float: left;
+		width: 216px;
+	}
+	
+	section.coloumnView .item {
+	 /* overflow: hidden;*/
+	  margin: 10px 0 0 15px;
+	  display: block;
+	  height: 63px;
+	}
+	
+	section.coloumnView .image {
+	  float: left;
+	  width: 80px;
+	  height: 60px;
+	}
+		section.coloumnView .image img {
+			max-width: 80px;
+			max-height: 60px;
+		}
+	
+	section.coloumnView .text {
+	  float: left;
+	  width: 105px;
+	  margin: 0 0 0 10px;
+	  font-size: 11px;
+	  
+	  width: 100px;
+	  overflow: hidden;
+	 /* word-wrap: break-word; */
+	  
+	}
+	
+		section.coloumnView .text p {
+			line-height: 15px;
+			color: #515151;
+		}
+		
+		section.coloumnView .text a {
+			color: #0e8eab;
+			display: block;
+			margin: 0;
+		  	padding: 0;
+		  	line-height: 14px;
+		}
+	
+	section.coloumnView .price p span {
+	  color: #cb0776;
+	  font-weight: bold;
+	}
+
+
+
+
+/* sellerOfTheWeek & NewAds widgets 
+----------------------------------------------------------*/
+
+section.rowView .frame {
+	position: relative;
+	display: block;
+	width: 350px;
+	height: 100px;
+	overflow: hidden;
+}
+
+	section.rowView .slider {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 98px;
+	}
+	
+	section.rowView .slide {
+		float: left;
+		width: 350px;
+	}
+	
+	
+	section.rowView .item {
+		float: left;
+		width: 165px;
+		overflow: hidden;
+		margin: 12px 0 0 10px;
+		font-size: 12px;
+	}
+	
+	section.rowView .image {
+		float: left;
+		width: 80px;
+		height: 65px;
+		text-align: center;
+	}
+	
+		section.rowView .image img {
+			max-width: 80px;
+			max-height: 60px;
+		}
+	
+	section.rowView .text {
+		float: left;
+		width: 75px;
+		margin: 0 0 0 5px;
+		line-height: 14px;
+	}
+	
+		section.rowView .text a {
+			color: #0e8eab;
+			margin: 0 0 3px 0;
+			font-size: 11px;
+			
+		}
+	
+	section.rowView .price {
+		margin: 5px 0 0 0;
+		color: #515151;
+	}
+	
+	section.rowView .price span {
+		color: #cb0776;
+		font-weight: bold;
+	}
+
+
+section.blockView .frame {
+	position: relative;
+	display: block;
+	width: 308px;
+	height: 290px;
+	overflow: hidden;
+}
+
+	section.blockView .slider {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 290px;
+	}
+	
+	section.blockView .slider img[alt]{
+		color: #fff;
+	}
+	
+	section.blockView .slide {
+		float: left;
+		width: 308px;
+	}
+	
+	section.blockView .item {
+	 /* overflow: hidden;*/
+	  margin: 10px 0 0 15px;
+	  display: block;
+	  height: 63px;
+	}
+	
+	section.blockView .image {
+	  float: left;
+	  width: 80px;
+	  height: 60px;
+	}
+		section.blockView .image img {
+			max-width: 80px;
+			max-height: 60px;
+		}
+	
+	section.blockView .text {
+	  float: left;
+	  margin: 0 0 0 10px;
+	  font-size: 12px;
+	  width: 200px;
+	  overflow: hidden;
+	 /* word-wrap: break-word; */
+	  
+	}
+	
+		section.blockView .text p {
+			line-height: 15px;
+			color: #515151;
+		}
+		
+		section.blockView .text a {
+			color: #0e8eab;
+			display: block;
+			margin: 0;
+		  	padding: 0;
+		  	line-height: 14px;
+		}
+	
+	section.blockView .price p span {
+	  color: #cb0776;
+	  font-weight: bold;
+	}
+
+
+.oldPrice {
+	text-decoration: line-through;
+	letter-spacing: -0.5px;
+}
+
+.leftPosition {
+	margin: 0 10px 0 0px;
+	float: left;	
+}
+
+/* pagers */
+
+.pages {
+	display: inline-block;
+}
+
+.previous {
+	width: 29px;
+	height: 26px;
+	display: inline-block;
+}
+
+.next {
+	width: 29px;
+	height: 26px;
+	display: inline-block;
+}
+
+.next:hover {
+	background-position: -32px -150px;
+}
+
+.blur {
+	opacity: 0.25;
+	filter:alpha(opacity=25);
+	cursor: default;
+}
+
+#widget_01 .slide .title {
+	text-transform: lowercase;	
+}
+
+#widget_01 .slide .title a:first-letter {
+	text-transform: capitalize !important;	
+}
+

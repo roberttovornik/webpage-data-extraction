@@ -1,0 +1,673 @@
+/* LIST backgrounds */
+#toolBox-top .toolbox .viewType ul li.icon,
+#list .ad .additionalInfo span.extraBadge a,
+#list p.certifiedUserList,
+#listHeader .listSearch input.searchButton,
+/* GRID background */
+div.adGridBottomBar span.location,
+div.adGridBottomBar span.pureBread,
+div.adGridBottomBar span.dateExpires,
+div.gridContent p.certifiedUser,
+#adDetail a.icon,
+#adDetail .ad .purebreadAdBadge,
+#adDetail .ad .newYearAdBadge,
+/* MAIN backgrounds */
+.messageBox .icon,
+/* AD detail */
+#sellerInfo p.certifiedUser,
+#sellerBox p.certifiedUserPage,
+div.adGridContent .Novoletna,
+div.adGridContent .Izbrana,
+#list .ad .miscellaneous .Novoletna,
+#list .ad .miscellaneous .Izbrana {
+	background-image: url('img/system_icons.png?v=1.5');
+	background-repeat: no-repeat;
+}
+
+/* LIST backgrounds */
+#list .ad .image span.flag_newAd,
+span.flag_reducePercentage,
+#list .pager a.back,
+#list .pager a.back:hover,
+#list .pager a.forward,
+#list .sortBox,
+/* GRID background */
+div.adGrid span.flag_newAd,
+div.adGrid span.flag_newAdTpt,
+section#list div.adGrid span.flag_reducePercentage,
+/* DETAIL backgrounds */
+#adDetail .navigation a.back span,
+#similarProducts .previous,
+#adDetail .navigation a.back:hover span,
+#similarProducts .previous:hover,
+#adDetail .navigation a.next span,
+#similarProducts .next,
+span.flag_reducePercentage,
+/* WIDGETS backgrounds */
+.previous,
+.next,
+#gallery .btn,
+.previous,
+.previous:hover,
+.next,
+.next:hover,
+/* HEADER background */
+#loginBox .checkbox label,
+#loginBox .fbConnect a,
+.search-col-input,
+.radio label,
+.radio label.checked,
+.liveChat,
+.liveChatSecurity,
+.footer-links li,
+.liveChatFooter,
+#socialNetworks .links a,
+#information .checked,
+/* PROMOBOX backgrounds */
+#promoBox div#navigation ul#slider li,
+#promoBox div#navigation ul#slider li.current,
+/* REDBOX backgrounds */
+div.redbox .previous,
+div.redbox .previous:hover,
+div.redbox .next,
+/* COOKIE warning dialog */
+#cookiesWarningLoginPopUp #cookieSelectorsLogin label {
+	background: url('img/sprite.png?v=1.4') no-repeat 0 0 transparent;
+}
+
+/* HEADER site logo */
+header a.site-logo {
+	background: transparent url('img/logotip-bolha.jpg?v=1.6') 0 20px no-repeat;
+	/*background: transparent url('img/logotip-newyear.jpg?v=1.6') 0 20px no-repeat; */
+	/*background: transparent url('img/logotip-bolha15let.png?v=1.6') 0 20px no-repeat;*/
+}
+
+#sellerTypeSelector ul li a,
+#listHeader .tab,
+#listHeader h1,
+input.buttonYellow,
+button.buttonYellow,
+.menu li.tab a,
+ul.top-categories li a,
+section h3.title, section h1.title,
+a.publishAdd,
+.button,
+.btnYellow {
+	background: transparent url('img/sprite-horizontal.png?v=1.4') 0 0 repeat-x;
+}
+
+/* HEADER button yellow hover */
+input.buttonYellow:hover,
+button.buttonYellow:hover,
+ul.top-categories li a:hover,
+a.publishAdd:hover,
+.btnYellow:hover {
+	background-image: url('img/sprite-horizontal-hover.png?v=1.4');
+}
+
+/* DETAIL list bullet */
+#adDetail .ad .content ul li {
+	background: url('/css/img/list-type.png?v=1.4') 0px 6px no-repeat;
+}
+
+/* DETAIL turism date price */
+.turismDatePrice {
+	background: url('img/mockup-bg.jpg?v=1.4') top left repeat-x;
+}
+
+/* DETAIL auction loading gif */
+#adAuction .loading,
+#adBids .loading {
+	background: transparent url('img/ajax-loader.gif?v=1.4') center center no-repeat;
+}
+
+/* FACETS check box */
+#facetSet .option a span.checkbox {
+	background: transparent url('img/checkbox.png?v=1.4') top left no-repeat; 
+}
+
+/* FACETS jquery UI bck overwrites */
+.advancedFacet .ui-widget-header { 
+	background: transparent url('img/sprite.png?v=1.4') -2px -576px repeat-x !important 
+}
+.advancedFacet div.slider { 
+	background: transparent url('img/sprite.png?v=1.4') -21px -515px no-repeat !important; 
+}
+.advancedFacet .ui-widget-header { 
+	background: #0E8EAB none 0 0 repeat-x !important 
+}
+.advancedFacet .ui-state-default,.advancedFacet .ui-widget-content .ui-state-default,.advancedFacet .ui-widget-header .ui-state-default,
+#reSizeExtraRangeSlider .ui-state-default,#reSizeExtraRangeSlider .ui-widget-content .ui-state-default,#reSizeExtraRangeSlider .ui-widget-header .ui-state-default,
+#reSizeRangeSlider .ui-state-default,#reSizeRangeSlider .ui-widget-content .ui-state-default,#reSizeRangeSlider .ui-widget-header .ui-state-default,
+#priceRangeSlider .ui-state-default,#priceRangeSlider .ui-widget-content .ui-state-default,#priceRangeSlider .ui-widget-header .ui-state-default {
+	background: #fff url('img/sprite.png?v=1.4') -6px -517px no-repeat !important;
+}
+
+/* FIRSTPAGE top categories */
+ul.top-categories li a span,
+ul.categories li .icon { 
+	background: transparent url('img/sprite-icon.png?v=1.4') 0 0 no-repeat;
+}
+
+/* FIRSTPAGE categories icons hover */
+ul.categories li .icon:hover,
+ul.categories li a:hover .icon {
+	background: transparent url('img/sprite-icon-hover.png?v=1.4') 0 0 no-repeat;
+}
+
+/* LIST */
+section .tools a span.more,
+section .tools a span.more:hover,
+section .tools a:hover span.more,
+#startDateRange, #startDateRangeCumulative, #startDataInvoices,
+#adListBottomCubes div span.more,
+ul#allCategories span.more {
+	background: transparent url('img/sprite-cursors.png?v=1.4') 0 0 no-repeat;
+}
+
+/* FIRSTPAGE dottes */
+.bgDottes {
+	background:url('img/firstPagePoints.png?v=1.4') no-repeat bottom right transparent;
+}
+
+/* REDBOX */
+/*
+#redbox {
+	background:url('img/points.png?v=1.4') no-repeat bottom center transparent;
+}
+*/
+
+/* CERTIFIED USER */
+.puporabnik .area {
+	background-image: url('/images/podpis/cert-area.png?v=1.4');
+}
+
+
+/****************************************************************************
+****************************************************************************/
+
+
+/* LIST Flag for new ad */
+#list .ad .image span.flag_newAd {
+	background-position: -2px -663px;
+}
+
+/* LIST Reduced percentage flag */
+span.flag_reducePercentage {
+	background-position: -73px -663px;
+}
+
+/* LIST Extra badge */
+#list .ad .additionalInfo span.extraBadge a {
+	background-position: 0 -760px;
+}
+
+/* LIST pager back button */
+#list .pager a.back {
+	background-position: -1px -123px;
+}
+
+/* LIST pager back button hover */
+#list .pager a.back:hover {
+	background-position: -32px -123px;
+}
+
+/* LIST pager forward button */
+#list .pager a.forward {
+	background-position: -1px -150px;
+}
+
+/* LIST pager forward button hover */
+#list .pager a.forward:hover {
+	background-position: -32px -150px;
+}
+
+/* LIST sort box */
+#list .sortBox {
+	background-position: bottom right;
+}
+
+/* LIST certified user listingType list */
+#list p.certifiedUserList {
+	background-position: 0 -938px;
+	line-height: 23px;
+}
+
+/* LIST seller type selector */
+#sellerTypeSelector ul li a {
+	background-position: 0 -220px;
+	background-repeat: repeat-x;
+}
+
+/* LIST header tab */
+#listHeader .tab {
+	background-position: 0 -220px;
+	background-repeat: repeat-x;
+}
+
+/* LIST search button */
+#listHeader .listSearch input.searchButton {
+	background-color: #f3ed00;
+	background-position: center -259px;
+}
+
+/* LIST header */
+#listHeader h1 {
+	background-position: 0 -220px;
+	background-repeat: repeat-x;
+}
+
+
+#sellerBox p.certifiedUserPage {
+	background-position: 0 -940px; 
+	padding-left: 22px;
+}
+
+/*******************************************************************************/
+
+/* GRID flag new ad */
+div.adGrid span.flag_newAd {
+	background-position: -2px -663px;
+}
+
+/* GRID flag new ad fix for sponsoredAds */
+div.adGrid span.flag_newAdTpt {
+	background-position: -2px -663px;
+}
+
+/* GRID reduced percentage flag */
+section#list div.adGrid span.flag_reducePercentage {
+	background-position: -73px -663px;	
+}
+
+/* GRID ad content location */
+div.adGridBottomBar span.location {
+	background-position: 0 -881px;
+}
+
+/* GRID pureBread icon */
+div.adGridBottomBar span.pureBread {
+	background-position: 0 -900px;
+}
+
+/* GRID content date expires*/
+div.adGridBottomBar span.dateExpires {
+	background-position: 0 -920px;
+}
+
+/* GRID content certified user */
+div.gridContent p.certifiedUser {
+	background-position:0 -941px;
+}
+
+/*******************************************************************************/
+
+/* DETAIL backgrounds widget navigation */
+#adDetail .navigation a.back span,
+#similarProducts .previous {
+	background-position: -1px -123px;
+}
+
+
+/* DETAIL widget navigation icons */
+#adDetail .navigation a.back:hover span,
+#similarProducts .previous:hover {
+	background-position: -32px -123px;
+}
+
+/* DETAIL widget navigation icons */
+#adDetail .navigation a.next span,
+#similarProducts .next {
+	background-position: -1px -150px;
+}
+
+/* DETAIL pure bread badge */
+#adDetail .ad .purebreadAdBadge {
+	background-position: 0 -759px;
+}
+
+#adDetail .ad .newYearAdBadge {
+	background-position: 0 -981px;
+}
+
+/* DETAIL flag reduced percentage */
+span.flag_reducePercentage {
+	background-position: -73px -663px;
+}
+
+/* DETAIL widget previous button */
+.previous {
+	background-position: -1px -123px;
+}
+
+/* DETAIL widget next button */
+.next {
+	background-position: -1px -150px;
+}
+
+/* DETAIL gallery buttons */
+#gallery .btn {
+	background-position: 0 0;
+}
+
+/*******************************************************************************/
+
+/* WIDGETS backgrounds */
+.previous,
+.previous:hover,
+.next,
+.next:hover {
+	background-position: -32px -150px;
+}
+
+/* WIDGETS previous button icon */
+.previous {
+	background-position: -1px -123px;
+}
+
+/* WIDGETS previous hover button icon */
+.previous:hover {
+	background-position: -32px -123px;
+}
+
+/* WIDGETS next button icon */
+.next {
+	background-position: -1px -150px;
+}
+
+/* WIDGETS next hover button icon */
+.next:hover {
+	background-position: -32px -150px;
+}
+
+
+/*******************************************************************************/
+
+/* HEADER button yellow */
+input.buttonYellow,
+button.buttonYellow { 
+	background-position: 0 -184px;
+}
+
+/* HEADER live chat icon */
+.liveChat {
+	background-position: -8px -492px;
+}
+
+/* HEADER live chat security icon */
+.liveChatSecurity {
+	background-position: -8px -488px;
+}
+
+/* HEADER label */
+#loginBox .checkbox label,
+/* COOKIE Warning dialog label */
+#cookiesWarningLoginPopUp #cookieSelectorsLogin label
+{
+	background-position: -4px -338px;
+}
+
+/* HEADER fb connect */
+#loginBox .fbConnect a {
+	background-position: -3px -222px;
+}
+
+/* HEADER search inptu */
+.search-col-input {
+	background-position: 0 -294px;
+}
+
+/* HEADER radio label */
+.radio label{
+	background-position: -4px -380px;
+}
+
+/* HEADER radio label checked*/
+.radio label.checked{
+	background-position: -4px -402px;
+}
+
+/*******************************************************************************/
+
+/* FACETS link bck */
+.menu li.tab a {
+	background-position: 0 -437px;
+}
+
+.menu li.tab a.energyCards {
+	background-position: 0 -310px;	
+}
+
+/*******************************************************************************/
+
+/* FIRSTPAGE checked */
+#information .checked {
+	background-position: 0 -178px;
+}
+
+/*******************************************************************************/
+
+/* FOOTER links */
+.footer-links li {
+	background-position: 0 -204px;
+}
+
+/* FOOTER live chat */
+.liveChatFooter {
+	background-position: -8px -494px;
+}
+
+/*******************************************************************************/
+
+/* MAIN backgrounds */
+.messageBox .icon {
+	background-position: 0 0;
+}
+
+a.publishAdd:hover,
+.btnYellow:hover {
+	background-repeat: repeat-x;
+	background-color: transparent;
+	background-position: 0 0;
+}
+
+
+/* MAIN icons */
+.messageBox .icon {
+	background-position: 0 -80px;
+}
+
+/* MAIN header 1,3 */
+section h3.title, section h1.title  {
+	background-position: 0 -220px;
+}
+
+/* MAIN section tools */
+section .tools a span.more {}
+
+/* MAIN section tools hover */
+section .tools a span.more:hover,
+section .tools a:hover span.more  {
+	background-position: 0 -19px;
+}
+
+/* MAIN publish ad */
+a.publishAdd {
+	background-position: 0 -261px;
+	background-repeat: repeat-x;
+}
+
+/* MAIN publish ad hover */
+a.publishAdd:hover {
+	background-position: 0 -220px;
+}
+
+/* MAIN button style */
+.button {
+	background-position: 0 -220px;
+	background-repeat: repeat-x;
+}
+
+/* MAIN button yellow style */
+.btnYellow {
+	background-position: 0 -184px;
+	background-repeat: repeat-x;
+}
+
+/* MAIN button yellow style hover */
+.btnYellow:hover {
+	background-position: 0 -184px;
+}
+
+
+/*******************************************************************************/
+
+/* PROMOBOX points */
+#promoBox div#navigation ul#slider li {
+	background-position: -3px -606px;
+}
+
+/* PROMOBOX points */
+#promoBox div#navigation ul#slider li.current {
+	background-position: -20px -606px;
+}
+
+/*******************************************************************************/
+
+/* REDBOX previous button icon */
+div.redbox .previous {
+	background-position: -1px -123px;
+}
+
+/* REDBOX previous button icon hover */
+div.redbox .previous:hover {
+	background-position: -32px -123px;
+}
+
+/* REDBOX next button */
+div.redbox .next {
+	background-position: -1px -150px;
+}
+
+/*******************************************************************************/
+
+/* Date range picker currsor */
+#startDateRange, #startDateRangeCumulative, #startDataInvoices {
+	background-position: 129px -139px;
+}
+
+/* LIST cursor DEPRECIATED */
+#adListBottomCubes div span.more {
+	background-position: right -138px;
+}
+
+/* ALL CATEGORIES currsor */
+ul#allCategories span.more {
+	background-position: -5px -139px;
+}
+
+/* Kodeks Sign */
+div.kodeksSign {
+	margin: 14px 0;
+}
+div.kodeksSign img,
+div.kodeksSign span { 
+	float: left;
+}
+div.kodeksSign img {
+	width: 46px;
+}
+div.kodeksSign span {
+	margin-left: 10px;
+	width: 120px;
+	color: #ad2d2e;
+	line-height: 15px;
+	margin-top: -1px;
+}
+div.kodeksSign.kodekssign-profile {
+	margin-top: 0px;
+}
+div.kodeksSign.kodekssign-profile span {
+	width: 110px;
+}
+/*******************************************************************************/
+
+
+
+/*
+#corpoContent div.box ul li {
+	list-style-image: url("img/list-type.png");
+}
+
+ul#allCategories span.more {
+	background: transparent url(img/sprite-cursors.png) -5px -139px no-repeat;
+}
+
+
+#mojabolha .updating div.loading {
+	background: transparent url(img/ajax-loader.gif) top center no-repeat;
+}
+
+#mojabolha .mainMenu ul li a {
+	background: transparent url(img/sprite-horizontal.png) 0 -220px repeat-x;
+}
+
+#mojabolha .facet a.reset {
+	background: transparent url(img/sprite-cursors.png) no-repeat 0px -175px;
+}
+
+#mojabolha ul.subMenu li.pendingList span.icon {
+	background: transparent url(img/system_icons.png?v=1.1) 0 -500px no-repeat;
+}
+
+#ScrollToTopMB {
+	background: transparent url(img/sprite-cursors.png?v1.1) 67px -227px no-repeat;
+}
+
+a.icon {
+	background: transparent url(img/system_icons.png?v=1.1) 0 0 no-repeat;
+}
+
+#adList .pager a.back,
+#messageList .pager a.back {
+	background: url(img/system_icons.png?v=1.1) no-repeat 0 -220px transparent;
+}
+
+#adList .pager a.forward,
+#messageList .pager a.forward {
+	background: url(img/system_icons.png?v=1.1) no-repeat 0 -240px transparent;
+}
+
+#mojabolha .search input.searchButton {
+	background: #f3ed00 url(img/system_icons.png?v=1.1) center -259px no-repeat;
+}
+
+#adList .ad .tools span.pending {
+	background: transparent url(img/system_icons.png?v=1.1) 0 -500px no-repeat !important;
+}
+
+#adList .ad .tools .notes span.icon {
+	background: transparent url(img/system_icons.png?v=1.1) 0 0 no-repeat;
+}
+
+#dialogBoxWidget .loading {
+	background: transparent url(img/ajax-loader.gif) center center no-repeat;
+}
+
+.adStatListing .prev {
+	background: url(img/system_icons.png?v=1.1) no-repeat 0 -220px transparent;		
+}
+
+.adStatListing .next {
+	background: url(img/system_icons.png?v=1.1) no-repeat right -240px transparent;
+}
+
+.chart-nav-arrow {
+	background: transparent url(img/sprite-cursors.png?v1.1) 5px -264px no-repeat;
+}
+
+.chart-nav-arrow-open {
+	background: transparent url(img/sprite-cursors.png?v1.1) 5px -246px no-repeat !important;
+}
+*/
+

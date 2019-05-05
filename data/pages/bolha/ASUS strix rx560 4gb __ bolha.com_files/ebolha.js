@@ -1,0 +1,1 @@
+(function(){window.ipromNS.version.site.ebolha=1.001;var a=window.ipromNS.Utils;window.ipromNS.siteSettings={core7Track:!0,relay:!0,sections:!0,layout:{billboard:{width:908}}};window==window.top&&a.addZone(1227);window.ipromNS.formatSettings={1:{mode:"stretch"}}})();

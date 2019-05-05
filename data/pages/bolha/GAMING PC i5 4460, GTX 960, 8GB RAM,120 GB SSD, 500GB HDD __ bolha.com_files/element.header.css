@@ -1,0 +1,513 @@
+/* top bar
+----------------------------------------------------*/
+.top-bar {
+	line-height: 24px;
+	background: #3d3d3d;
+	color: #fff;
+}
+
+.top-bar a {
+	color: #12b6de;
+	text-decoration: none;
+	margin: 6px; 
+}
+
+.top-bar a:hover {
+	color: #fff;
+}
+
+.top-bar nav {
+	display: block;
+	float: right;
+	line-height: 12px;
+	padding: 6px 0;
+	margin-right: 7px;
+}
+
+.top-bar nav ul li { 
+	float: left;
+	padding: 0 5px;
+	border-right: 1px solid #fff; 
+}
+.top-bar nav ul li.last { padding-right: 0px; border: none;}
+.top-bar nav ul li a { color: white; margin: 0; }
+
+.top-bar nav ul li a:hover { color: #f3ed00; }
+
+.liveChat {
+	padding-left: 15px;
+}
+
+.liveChatSecurity {
+	padding-left: 15px;
+}
+
+
+/* header
+----------------------------------------------------*/
+header {
+	position: relative;
+	display: block;
+	height: 110px;
+	 /*margin-bottom: 10px !important;*/
+	
+}
+
+header .logoHolder {
+	height: 100px;
+	position:relative;
+}
+
+header a.site-logo {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100px;
+	width: 340px;
+	text-indent: -100000px;
+}
+
+
+/* searchBox */
+
+#mainSearchBox {
+	position: relative;
+	margin: 40px 0 0 20px;
+}
+
+#mainSearchBox .searchInput {
+	position: relative;
+	display: block;
+	height: 32px;
+	top: 2px;
+	border: 1px solid #929292 ;
+	-webkit-box-shadow: inset 0 0 3px #999;
+	-moz-box-shadow: inset 0 0 3px #999;
+	box-shadow: inset 0 0 3px #999;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#mainSearchBox .searchInput input.input-main-search {
+	display: none;
+}
+
+#mainSearchBox input.input-mainSearch {
+	/*padding: 5px 0px 5px 8px;*/
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 8px;
+	margin: 1px 0;
+	color: #999;
+	height: 20px;
+	font-size: 14px;
+	font-weight: normal;
+	width: 245px;
+	float: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+}
+
+#mainSearchBox input.input-mainSearch::-ms-clear{
+	/*display: none;*/
+}
+
+#mainSearchBox input.mainSearchSubmit {
+	position: absolute;
+	top: -2px;
+	right: 0;
+	width: 80px;
+	height: 36px;
+}
+
+#mainSearchBox .searchInCategory {
+	position: absolute;
+	top: 5px;
+	left: 15px;
+	-webkit-border-radius: 4px;
+  	-moz-border-radius: 4px;
+  	border-radius: 4px;
+  	background: #eee;
+  	padding:0 5px 0 5px;
+  	margin: 0;
+  	line-height: 22px;
+}
+
+#mainSearchBox .searchInCategory a {
+	-webkit-border-radius: 2px;
+  	-moz-border-radius: 2px;
+  	border-radius: 6px;
+  	background: #585858;
+  	padding: 0 4px;
+  	display: inline-block;
+  	
+  	margin-left: 5px;
+  	line-height: 15px;
+  	font-size: 10px;
+  	font-weight: bold;
+  	text-decoration: none;
+  	color: white;
+}
+
+
+#calcElement {
+	font-size: 14px;
+	background: red;
+	visibility: hidden;
+}
+
+
+/* - ----- */
+header .searchBox {
+  position: relative;
+  margin: 40px 0 0 20px;
+  display: none;
+}
+
+
+header a#extendedSearchBoxOpen {
+  line-height: 22px;
+  color: #12b6de;
+  padding: 5px 0 0 11px;
+  font-size: 12px;
+}
+
+header a.publishAdd {
+	margin: 39px 0 0 0;
+	height: 36px;
+	line-height: 36px;
+}
+
+
+
+
+/* main form buttons */
+
+input.buttonYellow,
+button.buttonYellow { 
+  	position: relative;
+  	color: #444;
+  	font-weight: bold;
+  	font-size: 14px;
+  	border:#929292 1px solid;
+	
+	-webkit-box-shadow: inset 0 0 3px #999;
+  	-moz-box-shadow: inset 0 0 3px #999;
+  	box-shadow: inset 0 0 3px #999;
+  	
+  	-webkit-border-radius: 5px;
+  	-moz-border-radius: 5px;
+  	border-radius: 5px;
+}
+
+header .searchBox input.buttonYellow {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 80px;
+	height: 36px;
+}
+
+header .searchBox .input {
+	position: relative;
+}
+
+header .searchBox .input .searchInCategory {
+	position: absolute;
+	top: 7px;
+	left: 10px;
+	-webkit-border-radius: 2px;
+  	-moz-border-radius: 2px;
+  	border-radius: 2px;
+  	background: #ccc;
+  	padding:0 5px;
+  	margin-left: 6px;
+  	line-height: 22px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* loginBox */
+
+#loginBox {
+	position: absolute;
+	display: none;
+	height: auto;
+	top: 0;
+	right: 65px;
+	padding: 0;
+	background: #4e4e4e;
+	color: #fff;
+	
+	-moz-border-radius: 0 0 10px 10px;
+	-webkit-border-radius: 0 0 10px 10px;
+	border-radius: 0 0 10px 10px;
+	
+	-moz-box-shadow: 0px 3px 3px 2px #e3e3e3;
+	-webkit-box-shadow: 0px 3px 3px 2px #e3e3e3;
+	box-shadow: 0px 3px 3px 2px #e3e3e3;
+	z-index: 100000;
+}
+
+#loginBox form { padding: 10px; color: #fff; }
+
+#loginBox .formField {
+	position: relative;
+	display: block;
+	margin: 5px 0;
+}
+
+#loginBox input.textField {
+	padding: 5px 8px;
+	color: #999;
+	height: 20px;
+	font-size: 12px;
+	border:#929292 1px solid;
+	width: 180px;
+	-webkit-box-shadow: inset 0 0 3px #999;
+	-moz-box-shadow: inset 0 0 3px #999;
+	box-shadow: inset 0 0 3px #999;
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#loginBox input[type="checkbox"],
+#loginBox input[type="radio"] {
+	display: none;
+}
+
+
+#loginBox .checkbox label{
+	display: inline-block;
+	margin: 5px 0;
+	height: 21px;
+	padding-left: 25px;
+}
+
+#loginBox .checkbox label.checked{
+	background-position: -4px -359px;
+}
+
+#loginBox .checkbox label.focused {
+	color:#FCD700;
+}
+
+#loginBox input.buttonYellow {
+	display: block;
+	width: 130px;
+	height: 32px;
+	padding: 5px 10px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#loginBox .fbConnect {
+	position: relative;
+	display: block;
+	margin-top: 10px;
+	border-top: 1px solid #777;
+	padding-top: 10px;
+	line-height: 16px;
+	height: 1%;
+}
+
+#loginBox .fbConnect a {
+	display: block;
+	height: 32px;
+	width: 131px;
+	margin: 15px auto;
+}
+
+#loginBox a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#loginBox a:hover {
+	color: #FCD700;
+}
+
+#loginBox .spacer {
+	margin-bottom:10px;
+}
+
+a#loginBoxClose {
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ****************************************************************
+
+
+buttons search
+----------------------------------------------------*/
+
+
+
+
+
+.btn-ext-search {
+  padding: 5px 10px;
+  margin: 10px 10px 10px 0px;
+  width: 130px;
+  height: 32px;
+  text-align: center;
+}
+
+
+
+.popup input[type=checkbox] {
+  margin: 5px;
+  border: 0;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 0px 0px 6px #e3e3e3; 
+	-webkit-box-shadow: 0px 0px 6px #e3e3e3;
+	box-shadow: 0px 0px 6px #e3e3e3;
+	  border: 0;
+}
+
+
+.search-col {
+	display: block;
+	position: relative;
+	margin: 10px 0 0 25px;
+	float: left;
+	padding: 0;
+}
+
+
+.popup p {
+  
+}
+
+.popup-rows, .popup-rows p {
+  margin: 10px 0 8px 0;
+}
+
+.popup-rows-input {
+  height: 30px;
+  margin: 0 3px;
+}
+
+
+.popup-select select {
+  width: 97%;
+  margin: 3px 0 0 0;
+  height: 22px;
+}
+
+
+
+.search-col-input {
+  width: 42px;
+  height: 36px;
+  border: 0;
+  float: right;
+  margin-right: 28px; 
+}
+ 
+ 
+ /* input types
+----------------------------------------------------*/
+
+
+.input input[type="text"]  {
+	/*float: left;*/
+	padding: 5px 10px 5px 8px;
+	color: #999;
+	height: 20px;
+	margin-top: 2px;
+	border:#929292 1px solid;
+	-webkit-box-shadow: inset 0 0 3px #999;
+	-moz-box-shadow: inset 0 0 3px #999;
+	box-shadow: inset 0 0 3px #999;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.input-std input[type="text"]{
+	width:90%
+}
+
+.input-main-search {
+	font-size: 14px;
+	font-weight: normal;
+	width: 240px;
+	float: none;
+	padding-right: 100px;
+}
+
+.input-popup {
+	font-size: 12px;
+	margin: 5px;
+	width: 85%;
+}
+
+ 
+  
+.radio label{
+	display: inline-block;
+	height: 21px;
+	padding-left: 25px;
+}
+
+
+ /* auto complete
+----------------------------------------------------*/
+
+ul#autoComplete {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid #EDEDED;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 0 0 6px #E3E3E3;
+	margin: 0 0 0 350px;
+	overflow: hidden;
+	padding: 5px 0;
+	position: absolute;
+	top: 75px;
+	width: 343px;
+	z-index: 100;
+	}
+	
+	ul#autoComplete li{
+		padding: 5px 15px 5px 15px;
+		font-size: 13px;
+		background: #fff;
+		cursor: pointer;
+	}
+	
+	ul#autoComplete li:hover, ul#autoComplete li.selected {
+		background: #ededed;
+	}

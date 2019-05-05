@@ -1,0 +1,52 @@
+/* Print styles!
+-------------------------------------------------------------------------------*/
+@media print {
+	
+header, .coloumn .span-7, #tagcloud, footer, .footer-links, .adTools, .top-bar, .floater,
+.coloumn .span-20, .allTools, .slideshow, #skyscraper, #pqp-container, #similarProducts,
+.p5 .roundedBox-10, .iprom_lazyload, .navigation, .roundedBox-10 span.more a, #skyscraper div span.more a,
+#breadcrumbs, #plista, #servicesToItems, #similarProducts, #purebredDogs, #cookiesWarning, #cookiesWarningLoginPopUp,
+.publishSmall, #ContactSellerLink, #errorLoginPopUp, #warningDisagree, #cookiesWarningLoginPopUp, #cookiesShowFloaterFlat, 
+.ipromBgAttachment
+{
+	display:none !important; 	
+	font: normal 12px/17px Arial !important;
+  	color: #515151; 
+}
+
+body {
+	font: normal 12px/13px Trebuchet MS;
+	line-height: 14px;
+}
+
+.adInfo {
+	margin-left: -15px;
+}
+	
+.ad {
+	margin-right: 30px;	
+}
+
+.iAdserver, #floater {
+	display: none !important;
+}
+
+
+}
+
+/* Media queries!
+-------------------------------------------------------------------------------*/
+
+/* Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 580px) {
+	
+		
+}
+
+@media all and (orientation: portrait) {
+	
+}
+
+@media all and (orientation: landscape) {
+	
+}
