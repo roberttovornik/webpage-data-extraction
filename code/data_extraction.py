@@ -72,7 +72,7 @@ def extract_data_overstock(document : str, method='xpath'):
             #listings[i]['Content'] = listing_trees[i].xpath('./td[2]/table/tbody/tr/td[2]/span/text()')[0]
             listings[i]['Content'] = listing_trees[i].xpath('./td[2]/table/tbody/tr/td[2]')[0].text_content()
     
-    data = json.dumps(listings)
+    data = json.dumps(listings, ensure_ascii=False)
     return data
 
 def extract_data_rtvslo(document : str, method='xpath'):
@@ -115,7 +115,7 @@ def extract_data_rtvslo(document : str, method='xpath'):
         article['SubTitle'] = tree.xpath('//*[@id="main-container"]/div[3]/div/header/div[2]/text()')[0]
         article['Lead'] = tree.xpath('//*[@id="main-container"]/div[3]/div/header/p/text()')[0]
         article['Content'] = '\n\n'.join(tree.xpath('//*[@id="main-container"]/div[3]/div/div[2]/article/p/text()'))
-    data = json.dumps(article)
+    data = json.dumps(article, ensure_ascii=False)
     return data
 
 def extract_data_bolha(document : str, method='xpath'):
@@ -205,7 +205,7 @@ def extract_data_bolha(document : str, method='xpath'):
         article['UserSinceTime'] = seller_info.xpath('./i/text()')[0].split()[-1]   
         article['Content'] = tree.xpath('//div[@class = "content"]/p')[0].text_content()
         
-    data = json.dumps(article)
+    data = json.dumps(article, ensure_ascii=False)
     return data
         
         
