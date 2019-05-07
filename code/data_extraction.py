@@ -13,12 +13,13 @@ PAGES_DIRS=[PAGES_DIR / 'overstock.com/',
 
 def load_htmls(html_dir : Path):
     files={}
+    #WINDOWS-1252 , WINDOWS-1250 , iso-8859-2
     for filename in os.listdir(html_dir):
         #print(filename.encode('utf-8').strip())
         if filename.endswith('.html'):
             file_path=html_dir / filename
-            with open(html_dir / filename, 'r', encoding='ascii', errors='ignore') as file:
-                files[filename] = file.read()            
+            with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
+                files[filename] = file.read()  
     return files
 
 def extract_data_overstock(document : str, method='xpath'):
@@ -74,10 +75,16 @@ def extract_data_rtvslo(document : str, method='xpath'):
         regex_lead = '<p class=\"lead\">(.*)<\/p>'
         match_lead = re.compile(regex_lead).search(document)
         article['Lead'] = match_lead.group(1)
-        #regex_content = '<article class=\"article\">\s+<figure class=\"c-figure-right\">.*<\/figure>\s+<p class=\"Body\">(.*)<\/p><\/article>'
-        #match_content = re.compile(regex_content).search(document)
-        #article['Content'] = match_content.group(1)
-        #print(article['Content'])
+        
+        regex_article = '<article class="article">([\s\S]*)</article>'
+        match_article = re.compile(regex_article).search(document)
+        #print("ARTICLE",match_article.group(1))
+        
+        regex_articleParagraph = '<p[^>]*?>([\s\S]*?)<\/p>'
+        match_articleParagraph = re.compile(regex_articleParagraph).findall(match_article.group(1))        
+        article['Content'] = '\n\n'.join([p for p in match_articleParagraph if '<iframe' not in p])
+        article['Content'] = article['Content'].replace('<br>','\n')
+        article['Content'] = re.sub('<\/?[a-zA-Z]*>',' ',article['Content'])
         
     elif method.lower() == 'xpath':
         tree = html.fromstring(document)
@@ -148,10 +155,10 @@ def extract_data_bolha(document : str, method='xpath'):
         regex_userSinceTime = '<i>Uporabnik .*e od (.*)<\/i>'
         match_userSinceTime = re.compile(regex_userSinceTime).search(document)
         article['UserSinceTime'] = match_userSinceTime.group(1)
-        regex_description = '<div class=\"content\">\s+<p>(.*)<\/p>\s+<\/div>'
+        regex_description = '<div class=\"content\">\s+<p>([\s\S]*)<\/p>\s+<\/div>\s+<\/div>\s+<div class=\"infoBox\">'
         match_description = re.compile(regex_description).search(document)
         if match_description is not None:
-            article['Description'] = match_description.group(1)
+            article['Description'] = match_description.group(1).replace('<br>','\n')
         #print(article['Description'])
     elif method.lower() == 'xpath':
         tree = html.fromstring(document)
@@ -189,9 +196,11 @@ for domain in PAGES_DIRS:
         if 'overstock' in domain.name.lower():
             print(extract_data_overstock(html_raw, method='regex'))
         elif 'rtvslo' in domain.name.lower():
+            continue
             print(extract_data_rtvslo(html_raw, method='regex'))
         elif 'bolha' in domain.name.lower():
-            print(extract_data_bolha(html_raw, method='regex'))
+            continue
+            print(extract_data_bolha(html_raw, method='xpath'))
                 
 
 
