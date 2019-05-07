@@ -3,7 +3,6 @@ import os
 from lxml import html #etree
 import re
 import json
-import string
 
 
 PAGES_DIR = Path("../data/pages/")
@@ -14,9 +13,7 @@ EXTRACTED_DATA_DIR = Path("../data/extracted_data/")
 
 def load_htmls(html_dir : Path):
     files={}
-    #WINDOWS-1252 , WINDOWS-1250 , iso-8859-2
     for filename in os.listdir(html_dir):
-        #print(filename.encode('utf-8').strip())
         if filename.endswith('.html'):
             file_path=html_dir / filename
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
