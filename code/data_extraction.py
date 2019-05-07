@@ -10,6 +10,7 @@ PAGES_DIR = Path("../data/pages/")
 PAGES_DIRS=[PAGES_DIR / 'overstock.com/',
             PAGES_DIR / 'rtvslo.si/',
             PAGES_DIR / 'bolha/']
+EXTRACTED_DATA_DIR = Path("../data/extracted_data/")
 
 def load_htmls(html_dir : Path):
     files={}
@@ -33,7 +34,26 @@ def extract_data_overstock(document : str, method='xpath'):
     #For every listing on webpage fill-out listing_template dictionary
     #and add to listings
     if method == 'regex':
-        pass
+        regex_listings = '<tr bgcolor=\"#[fd]*\">\s*([\s\S]*?)\s*<\/tr>'
+        regex_listings = '<tr bgcolor=\"#[fd]*\">\s*([\s\S]*?)\s*<\/tr>\s*<tr>\s*<td colspan=\"2\" height=\"4\">'
+        regex_listings = '<tr bgcolor=\"#[fd]*\">\s*<td valign="top" align="center">[\s\S]*?<td valign="top">([\s\S]*?)<\/td>\s*<\/tr>\s*<tr>\s*<td colspan="2" height="4">'
+        match_listings = re.compile(regex_listings).findall(document)
+        match_listings = [l for l in match_listings if '<td valign="top"' in l]
+        listings = [{**listing_template} for l in match_listings]
+        for i in range(len(listings)):
+            #print(match_listings[i])
+            regex_title = '<a href=\".*\">\s*<b>(.*)<\/b><\/a>'
+            listings[i]['Title'] = re.compile(regex_title).search(match_listings[i]).group(1)
+            regex_prices = '<tbody><tr><td align="right" nowrap="nowrap"><b>List Price:</b></td><td align="left" nowrap="nowrap"><s>(.*)</s></td></tr>\s+<tr><td align="right" nowrap="nowrap"><b>Price:</b></td><td align="left" nowrap="nowrap"><span class="bigred"><b>(.*)</b></span></td></tr>\s+<tr><td align="right" nowrap="nowrap"><b>You Save:</b></td><td align="left" nowrap="nowrap"><span class="littleorange">([^\(]*)\s+\(([^\)]*)\)</span></td></tr>\s+</tbody>'
+            match_prices = re.compile(regex_prices).search(match_listings[i])
+            listings[i]['ListPrice'] = match_prices.group(1)
+            listings[i]['Price'] = match_prices.group(2)
+            listings[i]['Saving'] = match_prices.group(3)
+            listings[i]['SavingPercent'] = match_prices.group(4) 
+            regex_content = '<td valign=\"top\"><span class=\"normal\">([\s\S]*?)<br>'
+            match_regex = re.compile(regex_content).search(match_listings[i])
+            listings[i]['Content'] = match_regex.group(1)
+                   
     elif method == 'xpath':
         tree = html.fromstring(document)
         listing_trees = tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[@bgcolor]')
@@ -193,14 +213,22 @@ def extract_data_bolha(document : str, method='xpath'):
 for domain in PAGES_DIRS:    
     html_list = load_htmls(domain) 
     for html_name,html_raw in html_list.items():
+        json_content = None
         if 'overstock' in domain.name.lower():
-            print(extract_data_overstock(html_raw, method='regex'))
+            json_content = extract_data_overstock(html_raw, method='regex')
         elif 'rtvslo' in domain.name.lower():
-            continue
-            print(extract_data_rtvslo(html_raw, method='regex'))
+            json_content = extract_data_rtvslo(html_raw, method='regex')
         elif 'bolha' in domain.name.lower():
-            continue
-            print(extract_data_bolha(html_raw, method='xpath'))
+            json_content = extract_data_bolha(html_raw, method='xpath')
+       
+        json_file_name = html_name +'.json'
+        json_file_path = EXTRACTED_DATA_DIR / json_file_name
+        with open(json_file_path,'w') as fout:
+            fout.write(json_content)
+        print(json_content)    
+            
+            
+            
                 
 
 
