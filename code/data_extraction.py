@@ -31,14 +31,10 @@ def extract_data_overstock(document : str, method='xpath'):
     #For every listing on webpage fill-out listing_template dictionary
     #and add to listings
     if method == 'regex':
-        regex_listings = '<tr bgcolor=\"#[fd]*\">\s*([\s\S]*?)\s*<\/tr>'
-        regex_listings = '<tr bgcolor=\"#[fd]*\">\s*([\s\S]*?)\s*<\/tr>\s*<tr>\s*<td colspan=\"2\" height=\"4\">'
         regex_listings = '<tr bgcolor=\"#[fd]*\">\s*<td valign="top" align="center">[\s\S]*?<td valign="top">([\s\S]*?)<\/td>\s*<\/tr>\s*<tr>\s*<td colspan="2" height="4">'
         match_listings = re.compile(regex_listings).findall(document)
-        match_listings = [l for l in match_listings if '<td valign="top"' in l]
         listings = [{**listing_template} for l in match_listings]
         for i in range(len(listings)):
-            #print(match_listings[i])
             regex_title = '<a href=\".*\">\s*<b>(.*)<\/b><\/a>'
             listings[i]['Title'] = re.compile(regex_title).search(match_listings[i]).group(1)
             regex_prices = '<tbody><tr><td align="right" nowrap="nowrap"><b>List Price:</b></td><td align="left" nowrap="nowrap"><s>(.*)</s></td></tr>\s+<tr><td align="right" nowrap="nowrap"><b>Price:</b></td><td align="left" nowrap="nowrap"><span class="bigred"><b>(.*)</b></span></td></tr>\s+<tr><td align="right" nowrap="nowrap"><b>You Save:</b></td><td align="left" nowrap="nowrap"><span class="littleorange">([^\(]*)\s+\(([^\)]*)\)</span></td></tr>\s+</tbody>'
@@ -176,7 +172,6 @@ def extract_data_bolha(document : str, method='xpath'):
         match_description = re.compile(regex_description).search(document)
         if match_description is not None:
             article['Description'] = match_description.group(1).replace('<br>','\n')
-        #print(article['Description'])
     elif method.lower() == 'xpath':
         tree = html.fromstring(document)
         article['Title'] = tree.xpath('//*[@id="adDetail"]/div[2]/h1')[0].text_content()
