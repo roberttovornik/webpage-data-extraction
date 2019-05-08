@@ -52,6 +52,14 @@ Each of three methods accepts two input parameters:
 * __document__
 * __method__ (possible values: '_xpath_' or '_regex_')
 
+## Running roadrunner
+Run [roadrunner.py](code/roadrunner.py)
+
+Input: 
+Appoint __wrapper_page__ to inital page representing our base wrapper. Appoint __sample_page__ to the new page by which the wrapper gets generalized. 
+
+Ouput:
+Ufre notation with __#PCDATA__ expressing data fields, __(...)?__ representing optional fields and __(...)+__ representing iterator fields.
 
 
 ## License
