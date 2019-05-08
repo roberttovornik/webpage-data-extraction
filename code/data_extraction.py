@@ -3,22 +3,21 @@ import os
 from lxml import html #etree
 import re
 import json
-import string
 
 
 PAGES_DIR = Path("../data/pages/")
 PAGES_DIRS=[PAGES_DIR / 'overstock.com/',
             PAGES_DIR / 'rtvslo.si/',
             PAGES_DIR / 'bolha/']
+EXTRACTED_DATA_DIR = Path("../data/extracted_data/")
 
 def load_htmls(html_dir : Path):
     files={}
     for filename in os.listdir(html_dir):
-        #print(filename.encode('utf-8').strip())
         if filename.endswith('.html'):
             file_path=html_dir / filename
-            with open(html_dir / filename, 'r', encoding='ascii', errors='ignore') as file:
-                files[filename] = file.read()            
+            with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
+                files[filename] = file.read()  
     return files
 
 def extract_data_overstock(document : str, method='xpath'):
@@ -32,7 +31,22 @@ def extract_data_overstock(document : str, method='xpath'):
     #For every listing on webpage fill-out listing_template dictionary
     #and add to listings
     if method == 'regex':
-        pass
+        regex_listings = '<tr bgcolor=\"#[fd]*\">\s*<td valign="top" align="center">[\s\S]*?<td valign="top">([\s\S]*?)<\/td>\s*<\/tr>\s*<tr>\s*<td colspan="2" height="4">'
+        match_listings = re.compile(regex_listings).findall(document)
+        listings = [{**listing_template} for l in match_listings]
+        for i in range(len(listings)):
+            regex_title = '<a href=\".*\">\s*<b>(.*)<\/b><\/a>'
+            listings[i]['Title'] = re.compile(regex_title).search(match_listings[i]).group(1)
+            regex_prices = '<tbody><tr><td align="right" nowrap="nowrap"><b>List Price:</b></td><td align="left" nowrap="nowrap"><s>(.*)</s></td></tr>\s+<tr><td align="right" nowrap="nowrap"><b>Price:</b></td><td align="left" nowrap="nowrap"><span class="bigred"><b>(.*)</b></span></td></tr>\s+<tr><td align="right" nowrap="nowrap"><b>You Save:</b></td><td align="left" nowrap="nowrap"><span class="littleorange">([^\(]*)\s+\(([^\)]*)\)</span></td></tr>\s+</tbody>'
+            match_prices = re.compile(regex_prices).search(match_listings[i])
+            listings[i]['ListPrice'] = match_prices.group(1)
+            listings[i]['Price'] = match_prices.group(2)
+            listings[i]['Saving'] = match_prices.group(3)
+            listings[i]['SavingPercent'] = match_prices.group(4) 
+            regex_content = '<td valign=\"top\"><span class=\"normal\">([\s\S]*?)<br>'
+            match_regex = re.compile(regex_content).search(match_listings[i])
+            listings[i]['Content'] = match_regex.group(1)
+                   
     elif method == 'xpath':
         tree = html.fromstring(document)
         listing_trees = tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[@bgcolor]')
@@ -51,7 +65,7 @@ def extract_data_overstock(document : str, method='xpath'):
             #listings[i]['Content'] = listing_trees[i].xpath('./td[2]/table/tbody/tr/td[2]/span/text()')[0]
             listings[i]['Content'] = listing_trees[i].xpath('./td[2]/table/tbody/tr/td[2]')[0].text_content()
     
-    data = json.dumps(listings)
+    data = json.dumps(listings, ensure_ascii=False)
     return data
 
 def extract_data_rtvslo(document : str, method='xpath'):
@@ -74,10 +88,16 @@ def extract_data_rtvslo(document : str, method='xpath'):
         regex_lead = '<p class=\"lead\">(.*)<\/p>'
         match_lead = re.compile(regex_lead).search(document)
         article['Lead'] = match_lead.group(1)
-        #regex_content = '<article class=\"article\">\s+<figure class=\"c-figure-right\">.*<\/figure>\s+<p class=\"Body\">(.*)<\/p><\/article>'
-        #match_content = re.compile(regex_content).search(document)
-        #article['Content'] = match_content.group(1)
-        #print(article['Content'])
+        
+        regex_article = '<article class="article">([\s\S]*)</article>'
+        match_article = re.compile(regex_article).search(document)
+        #print("ARTICLE",match_article.group(1))
+        
+        regex_articleParagraph = '<p[^>]*?>([\s\S]*?)<\/p>'
+        match_articleParagraph = re.compile(regex_articleParagraph).findall(match_article.group(1))        
+        article['Content'] = '\n\n'.join([p for p in match_articleParagraph if '<iframe' not in p])
+        article['Content'] = article['Content'].replace('<br>','\n')
+        article['Content'] = re.sub('<\/?[a-zA-Z]*>',' ',article['Content'])
         
     elif method.lower() == 'xpath':
         tree = html.fromstring(document)
@@ -88,7 +108,7 @@ def extract_data_rtvslo(document : str, method='xpath'):
         article['SubTitle'] = tree.xpath('//*[@id="main-container"]/div[3]/div/header/div[2]/text()')[0]
         article['Lead'] = tree.xpath('//*[@id="main-container"]/div[3]/div/header/p/text()')[0]
         article['Content'] = '\n\n'.join(tree.xpath('//*[@id="main-container"]/div[3]/div/div[2]/article/p/text()'))
-    data = json.dumps(article)
+    data = json.dumps(article, ensure_ascii=False)
     return data
 
 def extract_data_bolha(document : str, method='xpath'):
@@ -148,11 +168,10 @@ def extract_data_bolha(document : str, method='xpath'):
         regex_userSinceTime = '<i>Uporabnik .*e od (.*)<\/i>'
         match_userSinceTime = re.compile(regex_userSinceTime).search(document)
         article['UserSinceTime'] = match_userSinceTime.group(1)
-        regex_description = '<div class=\"content\">\s+<p>(.*)<\/p>\s+<\/div>'
+        regex_description = '<div class=\"content\">\s+<p>([\s\S]*)<\/p>\s+<\/div>\s+<\/div>\s+<div class=\"infoBox\">'
         match_description = re.compile(regex_description).search(document)
         if match_description is not None:
-            article['Description'] = match_description.group(1)
-        #print(article['Description'])
+            article['Description'] = match_description.group(1).replace('<br>','\n')
     elif method.lower() == 'xpath':
         tree = html.fromstring(document)
         article['Title'] = tree.xpath('//*[@id="adDetail"]/div[2]/h1')[0].text_content()
@@ -178,7 +197,7 @@ def extract_data_bolha(document : str, method='xpath'):
         article['UserSinceTime'] = seller_info.xpath('./i/text()')[0].split()[-1]   
         article['Content'] = tree.xpath('//div[@class = "content"]/p')[0].text_content()
         
-    data = json.dumps(article)
+    data = json.dumps(article, ensure_ascii=False)
     return data
         
         
@@ -186,12 +205,22 @@ def extract_data_bolha(document : str, method='xpath'):
 for domain in PAGES_DIRS:    
     html_list = load_htmls(domain) 
     for html_name,html_raw in html_list.items():
+        json_content = None
         if 'overstock' in domain.name.lower():
-            print(extract_data_overstock(html_raw, method='regex'))
+            json_content = extract_data_overstock(html_raw, method='regex')
         elif 'rtvslo' in domain.name.lower():
-            print(extract_data_rtvslo(html_raw, method='regex'))
+            json_content = extract_data_rtvslo(html_raw, method='regex')
         elif 'bolha' in domain.name.lower():
-            print(extract_data_bolha(html_raw, method='regex'))
+            json_content = extract_data_bolha(html_raw, method='xpath')
+       
+        json_file_name = html_name +'.json'
+        json_file_path = EXTRACTED_DATA_DIR / json_file_name
+        with open(json_file_path,'w') as fout:
+            fout.write(json_content)
+        print(json_content)    
+            
+            
+            
                 
 
 
