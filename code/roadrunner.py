@@ -126,6 +126,22 @@ def find_prev_iterator_start(tokens, start_indx):
     
     return start_tag_found, i
 
+def find_end_of_optional(tokens, start_indx, tag):
+
+    i = start_indx
+    found = False
+
+    while i < len(tokens)-1:
+
+        if tokens[i][0] == "terminal_tag" and tokens[i][1] == tag:
+            found = True
+            break
+        
+        i += 1
+    
+    return found, i
+
+
 def clean_wrapper_iterators(wrapper, iterator_tag, internal_wrapper):
 
     i = len(wrapper)-1
@@ -260,10 +276,10 @@ def roadrunner(wrapper_tokens, sample_tokens, indx_w, indx_s, wrapper):
                     wrapper.append(optional)
                     return roadrunner(wrapper_tokens, sample_tokens, indx_w, indx_s+1, wrapper)
                 else:
-                    print(": >>>> ", wrap_token, " vs ", smpl_token)
-                    print(": >>>> ", wrapper_tokens[indx_w+1], " vs ", smpl_token)
-                    print(": >>>> ", wrap_token, " vs ", sample_tokens[indx_s+1])
-                    print("ERROR MATCHING OPTIONAL !!! ")
+                    # print(": >>>> ", wrap_token, " vs ", smpl_token)
+                    # print(": >>>> ", wrapper_tokens[indx_w+1], " vs ", smpl_token)
+                    # print(": >>>> ", wrap_token, " vs ", sample_tokens[indx_s+1])
+                    # print("ERROR MATCHING OPTIONAL !!! ")
                     return None
 
 
